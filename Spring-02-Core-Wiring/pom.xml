@@ -5,13 +5,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cydeo</groupId>
-    <artifactId>Spring-01-Core-IoC</artifactId>
+    <artifactId>Spring-02-Core-Wiring</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
-
 
 
     <dependencies>
@@ -20,6 +20,11 @@
             <artifactId>spring-context</artifactId>
             <version>5.3.22</version>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
 
+    </dependencies>
 </project>
