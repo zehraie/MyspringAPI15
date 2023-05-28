@@ -19,7 +19,7 @@ import javax.persistence.*;
 public class Account extends BaseEntity {
 
     private String name;
-    @JsonIgnore
+    @JsonIgnore // in the postmant we will not see the address in jsonbody
     private String address;
     private String country;
     private String state;
@@ -32,6 +32,7 @@ public class Account extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
+    //Eger orada isrelationship varsa burada Account ile User arasinda var, ve biz user i goremeyecegiz, acccuntta in jsonbody de
     @JsonBackReference //is the back part of reference - it will be omitted from serialization
     private User user;
 

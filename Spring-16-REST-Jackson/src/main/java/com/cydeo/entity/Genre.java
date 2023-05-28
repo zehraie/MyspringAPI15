@@ -16,7 +16,7 @@ public class Genre extends BaseEntity {
     private String name;
 
     @ManyToMany(mappedBy = "genreList")
-    @JsonIgnore
+    @JsonIgnore //
     private List<Movie> movieList;
 
 }
