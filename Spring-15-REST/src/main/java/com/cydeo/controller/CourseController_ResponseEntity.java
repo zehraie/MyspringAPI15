@@ -24,7 +24,7 @@ public class CourseController_ResponseEntity {
                 .header("Version","Cydeo.V2")
                 .header("Operation","Get List")
                 .body(courseService.getCourses());
-    }
+    } // I will see this data structure in the response data before json body
 
 
     @GetMapping("{id}")
@@ -39,5 +39,6 @@ public class CourseController_ResponseEntity {
                 .header("Operation","Create")
                 .body(courseService.createCourse(course));
     }
+
 
 }
