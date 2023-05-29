@@ -54,7 +54,7 @@ private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080
     }
     //CONSUME API, asyc
     @GetMapping("/flux")
-    public Flux<MovieCinema> readWithWebClient(){
+    public Flux<MovieCinema> readWithWebClient(){ // more than one object will be brought
 
         return webClient
                 .get()
@@ -64,11 +64,12 @@ private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080
                 .bodyToFlux(MovieCinema.class); //asyncronose
     }
     @GetMapping("/mono/{id}")
-    public Mono<MovieCinema> readMonoWithWebClient(@PathVariable("id") Long id){
+    public Mono<MovieCinema> readMonoWithWebClient(@PathVariable("id") Long id){ //return only one object
         return  webClient
                 .get()
-                .uri("/flux-movie-cinema/{id}",id)
+                .uri("/mono-movie-cinema/{id}",id)
                 .retrieve()
                 .bodyToMono(MovieCinema.class);
     }
+
 }
